@@ -37,6 +37,7 @@ jobs:
           command: echo ${EB_REGION}
       - run: eval $(aws ecr get-login --region $EB_REGION --no-include-email)      
       - run: docker build -t tutorial-aws-symfony-ci:latest .
+      - run: docker tag tutorial-aws-symfony-ci:latest 254002134964.dkr.ecr.eu-west-1.amazonaws.com/tutorial-aws-symfony-ci:latest
       - run: docker push 254002134964.dkr.ecr.eu-west-1.amazonaws.com/tutorial-aws-symfony-ci:latest
 
   deploy-stg:
