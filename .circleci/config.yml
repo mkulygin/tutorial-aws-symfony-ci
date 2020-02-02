@@ -53,9 +53,9 @@ jobs:
           echo "[profile eb-cli]" > ~/.aws/config
           echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
           echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-      - run: eb init --region $EB_REGION --platform Docker EB_APP
+      - run: eb init --region $EB_REGION --platform Docker $EB_APP
       - run: cp Dockerrun.aws.stg.json Dockerrun.aws.json
-      - run: eb use EB_ENV_STG --region $EB_REGION
+      - run: eb use $EB_ENV_STG --region $EB_REGION
       - run: eb deploy -v --staged --profile eb-cli
 
   deploy-prod:
@@ -71,9 +71,9 @@ jobs:
           echo "[profile eb-cli]" > ~/.aws/config
           echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
           echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-      - run: eb init --region $EB_REGION --platform Docker EB_APP
+      - run: eb init --region $EB_REGION --platform Docker $EB_APP
       - run: cp Dockerrun.aws.prod.json Dockerrun.aws.json
-      - run: eb use EB_ENV_STG --region $EB_REGION
+      - run: eb use $EB_ENV_PROD --region $EB_REGION
       - run: eb deploy -v --staged --profile eb-cli
 
 workflows:
