@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "032898222608.dkr.ecr.eu-central-1.amazonaws.com/tutorial-aws-symfony-ci:latest",
+    "Name": "254002134964.dkr.ecr.eu-west-1.amazonaws.com/tutorial-aws-symfony-ci:prod",
     "Update": "true"
   },
   "Ports": [
