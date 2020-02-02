@@ -26,3 +26,5 @@ https://circleci.com/gh/mkulygin/tutorial-aws-symfony-ci/edit#env-vars
 Check docker login:
 docker login -u AWS -p * https://254002134964.dkr.ecr.eu-west-1.amazonaws.com
 eval $(aws ecr get-login --region eu-west-1 --no-include-email)
+
+Test branch
