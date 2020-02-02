@@ -36,8 +36,8 @@ jobs:
           name: "What was my EB_REGION environment variable?"
           command: echo ${EB_REGION}
       - run: eval $(aws ecr get-login --region $EB_REGION --no-include-email)      
-      - run: docker build -t $CI_REGISTRY/$CI_REGISTRY_ID:latest .
-      - run: docker push $CI_REGISTRY/$CI_REGISTRY_ID:latest
+      - run: docker build -t ${CI_REGISTRY}/${CI_REGISTRY_ID}:latest .
+      - run: docker push ${CI_REGISTRY}/${CI_REGISTRY_ID}:latest
 
   deploy-stg:
     docker:
